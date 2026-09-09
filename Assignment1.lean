@@ -336,8 +336,8 @@ theorem exercise44 (P Q : Prop) : P ∧ False → Q := by
 def exercise45 (A : Type) : A ⊕ Empty → A := by
   intro h
   cases h with
-  | inl a => exact a
   | inr e => exact Empty.elim e
+  | inl a => exact a
 
 -- Zero-branch elimination. Exercises 46 and 47 state the same function. Use
 -- `Empty.elim` in the term proof.
