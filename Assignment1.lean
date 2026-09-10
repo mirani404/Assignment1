@@ -335,9 +335,9 @@ theorem exercise44 (P Q : Prop) : P ∧ False → Q := by
 @[autogradedDef 2]
 def exercise45 (A : Type) : A ⊕ Empty → A := by
   intro h
-  cases h with
-  | inr e => exact Empty.elim e
-  | inl a => exact a
+  rcases h with a | e
+  · exact a
+  · exact Empty.elim e
 
 -- Zero-branch elimination. Exercises 46 and 47 state the same function. Use
 -- `Empty.elim` in the term proof.
